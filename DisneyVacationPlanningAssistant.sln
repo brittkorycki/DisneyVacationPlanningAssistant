@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisneyVacationPlanningAssistant", "DisneyVacationPlanningAssistant\DisneyVacationPlanningAssistant.csproj", "{9E4B9B16-A80A-421E-9AEF-C8741F9E2560}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VacationPlanningAssistant.Data", "VacationPlanningAssistant.Data\VacationPlanningAssistant.Data.csproj", "{0F8D8171-FA11-4B81-89C2-8FE0C047CC58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VacationPlanningAssistant.Models", "VacationPlanningAssistant.Models\VacationPlanningAssistant.Models.csproj", "{3830D8A3-7EF8-4FC4-A5BD-E4D8E8888695}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VacationPlanningAssistant.Services", "VacationPlanningAssistant.Services\VacationPlanningAssistant.Services.csproj", "{9E237258-15EA-46F8-8196-CF4818E27F71}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E4B9B16-A80A-421E-9AEF-C8741F9E2560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E4B9B16-A80A-421E-9AEF-C8741F9E2560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E4B9B16-A80A-421E-9AEF-C8741F9E2560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E4B9B16-A80A-421E-9AEF-C8741F9E2560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F8D8171-FA11-4B81-89C2-8FE0C047CC58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F8D8171-FA11-4B81-89C2-8FE0C047CC58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F8D8171-FA11-4B81-89C2-8FE0C047CC58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F8D8171-FA11-4B81-89C2-8FE0C047CC58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3830D8A3-7EF8-4FC4-A5BD-E4D8E8888695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3830D8A3-7EF8-4FC4-A5BD-E4D8E8888695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3830D8A3-7EF8-4FC4-A5BD-E4D8E8888695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3830D8A3-7EF8-4FC4-A5BD-E4D8E8888695}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E237258-15EA-46F8-8196-CF4818E27F71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E237258-15EA-46F8-8196-CF4818E27F71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E237258-15EA-46F8-8196-CF4818E27F71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E237258-15EA-46F8-8196-CF4818E27F71}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A8800C85-3054-4921-81E1-1822CCF17CCE}
+	EndGlobalSection
+EndGlobal
