@@ -18,7 +18,7 @@ namespace VacationPlanningAssistant.Services
 
         public bool CreateAccommodation(AccommodationCreate model)
         {
-            var entity =
+            Accommodation entity =
                 new Accommodation()
                 {
                     Name = model.Name,
@@ -51,6 +51,7 @@ namespace VacationPlanningAssistant.Services
                             e =>
                                 new AccommodationListItem
                                 {
+                                    AccommodationId = e.AccommodationId,
                                     Name = e.Name,
                                     StreetAddress = e.StreetAddress,
                                     City = e.City,
@@ -99,6 +100,7 @@ namespace VacationPlanningAssistant.Services
                     .Accommodations
                     .Single(e => e.AccommodationId == model.AccommodationId);
 
+                entity.AccommodationId = model.AccommodationId;
                 entity.Name = model.Name;
                 entity.StreetAddress = model.StreetAddress;
                 entity.City = model.City;

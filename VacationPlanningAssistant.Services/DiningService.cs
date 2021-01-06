@@ -46,6 +46,7 @@ namespace VacationPlanningAssistant.Services
                             e =>
                                 new DiningListItem
                                 {
+                                    DiningId = e.DiningId,
                                     NameOfRestaurant = e.NameOfRestaurant,
                                     Location = e.Location,
                                     ReservationTime = e.ReservationTime,
@@ -86,6 +87,7 @@ namespace VacationPlanningAssistant.Services
                     .Dinings
                     .Single(e => e.DiningId == model.DiningId);
 
+                entity.DiningId = model.DiningId;
                 entity.NameOfRestaurant = model.NameOfRestaurant;
                 entity.Location = model.Location;
                 entity.ReservationTime = model.ReservationTime;

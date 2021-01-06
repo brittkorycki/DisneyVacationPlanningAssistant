@@ -45,6 +45,7 @@ namespace VacationPlanningAssistant.Services
                             e =>
                                 new TransportListItem
                                 {
+                                    TransportId = e.TransportId,
                                     Type = e.Type,
                                     Departure = e.Departure,
                                     ReservationNumber = e.ReservationNumber
@@ -83,6 +84,7 @@ namespace VacationPlanningAssistant.Services
                     .Transports
                     .Single(e => e.TransportId == model.TransportId);
 
+                entity.TransportId = model.TransportId;
                 entity.Type = model.Type;
                 entity.Departure = model.Departure;
                 entity.ReservationNumber = model.ReservationNumber;
