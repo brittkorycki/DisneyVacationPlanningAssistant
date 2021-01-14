@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,12 @@ namespace VacationPlanningAssistant.Data
     {
         [Key]
         public int AccommodationId { get; set; }
+        
+        [ForeignKey(nameof(ApplicationUser))]
+        public string Id { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
         [Required]
+
         public string Name { get; set; }
         [Display(Name = "Street Address")]
         public string StreetAddress { get; set; }

@@ -7,13 +7,13 @@ namespace VacationPlanningAssistant.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class TablesConnectionString : IMigrationMetadata
+    public sealed partial class AddFK : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(TablesConnectionString));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddFK));
         
         string IMigrationMetadata.Id
         {
-            get { return "202101060103440_Tables&ConnectionString"; }
+            get { return "202101130108042_AddFK"; }
         }
         
         string IMigrationMetadata.Source

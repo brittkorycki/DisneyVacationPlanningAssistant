@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,7 @@ namespace DisneyVacationPlanningAssistant.Controllers
         // GET: Accommodation
         public ActionResult Index()
         {
+            var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new AccommodationService();
             var model = service.GetAccommodations();
             return View(model);
@@ -27,6 +29,10 @@ namespace DisneyVacationPlanningAssistant.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(AccommodationCreate model)
         {
+
+            model.Id = (User.Identity.GetUserId());
+           
+
             if (!ModelState.IsValid) return View(model);
 
             var service = CreateAccommodationService();
@@ -44,6 +50,7 @@ namespace DisneyVacationPlanningAssistant.Controllers
 
         public ActionResult Details(int id)
         {
+            var userId = Guid.Parse(User.Identity.GetUserId());
             var svc = CreateAccommodationService();
             var model = svc.GetAccommodationById(id);
 

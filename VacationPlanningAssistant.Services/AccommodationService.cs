@@ -11,9 +11,14 @@ namespace VacationPlanningAssistant.Services
 {
     public class AccommodationService
     {
+        private readonly Guid _userId;
+        public AccommodationService(Guid userId)
+        {
+            _userId = userId;
+        }
+
         public AccommodationService()
         {
-
         }
 
         public bool CreateAccommodation(AccommodationCreate model)
@@ -22,6 +27,7 @@ namespace VacationPlanningAssistant.Services
                 new Accommodation()
                 {
                     Name = model.Name,
+                    Id = model.Id,
                     StreetAddress = model.StreetAddress,
                     City = model.City,
                     State = model.State,
@@ -52,6 +58,7 @@ namespace VacationPlanningAssistant.Services
                                 new AccommodationListItem
                                 {
                                     AccommodationId = e.AccommodationId,
+                                    Id = e.Id,
                                     Name = e.Name,
                                     StreetAddress = e.StreetAddress,
                                     City = e.City,
@@ -79,6 +86,7 @@ namespace VacationPlanningAssistant.Services
                     new AccommodationDetail
                     {
                         AccommodationId = entity.AccommodationId,
+                        Id  = entity.Id,
                         Name = entity.Name,
                         StreetAddress = entity.StreetAddress,
                         City = entity.City,

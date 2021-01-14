@@ -9,6 +9,7 @@ namespace VacationPlanningAssistant.Models
     public class TransportDetail
     {
         public int TransportId { get; set; }
+        public string Id { get; set; }
         public string Type { get; set; }
         public DateTime Departure { get; set; }
         public int ReservationNumber { get; set; }

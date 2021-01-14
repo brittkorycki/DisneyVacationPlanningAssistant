@@ -10,10 +10,17 @@ namespace VacationPlanningAssistant.Services
 {
     public class DiningService
     {
+        private readonly Guid _userId;
+      
+
+        public DiningService(Guid userId)
+        {
+            _userId = userId;
+        }
         public DiningService()
         {
-
         }
+
 
         public bool CreateDining(DiningCreate model)
         {
@@ -21,6 +28,7 @@ namespace VacationPlanningAssistant.Services
                 new Dining()
                 {
                     NameOfRestaurant = model.NameOfRestaurant,
+                    Id = model.Id,
                     Location = model.Location,
                     ReservationTime = model.ReservationTime,
                     ReservationNumber = model.ReservationNumber,
@@ -47,6 +55,7 @@ namespace VacationPlanningAssistant.Services
                                 new DiningListItem
                                 {
                                     DiningId = e.DiningId,
+                                    Id = e.Id,
                                     NameOfRestaurant = e.NameOfRestaurant,
                                     Location = e.Location,
                                     ReservationTime = e.ReservationTime,
@@ -70,6 +79,7 @@ namespace VacationPlanningAssistant.Services
                     new DiningDetail
                     {
                         DiningId = entity.DiningId,
+                        Id = entity.Id,
                         NameOfRestaurant = entity.NameOfRestaurant,
                         Location = entity.Location,
                         ReservationTime = entity.ReservationTime,

@@ -10,6 +10,12 @@ namespace VacationPlanningAssistant.Services
 {
     public class TransportService
     {
+        private readonly Guid _userId;
+        public TransportService(Guid userId)
+        {
+            _userId = userId;
+        }
+
         public TransportService()
         {
 
@@ -21,6 +27,7 @@ namespace VacationPlanningAssistant.Services
                 new Transport()
                 {
                     Type = model.Type,
+                    Id = model.Id,
                     Departure = model.Departure,
                     ReservationNumber = model.ReservationNumber
                 };
@@ -46,6 +53,7 @@ namespace VacationPlanningAssistant.Services
                                 new TransportListItem
                                 {
                                     TransportId = e.TransportId,
+                                    Id= e.Id,
                                     Type = e.Type,
                                     Departure = e.Departure,
                                     ReservationNumber = e.ReservationNumber
@@ -60,6 +68,7 @@ namespace VacationPlanningAssistant.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
+                
                 var entity =
                     ctx
                         .Transports
@@ -68,6 +77,7 @@ namespace VacationPlanningAssistant.Services
                     new TransportDetail
                     {
                         TransportId = entity.TransportId,
+                        Id = entity.Id,
                         Type = entity.Type,
                         Departure = entity.Departure,
                         ReservationNumber = entity.ReservationNumber

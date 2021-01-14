@@ -10,6 +10,7 @@ namespace VacationPlanningAssistant.Models
     public class AccommodationListItem
     {
         public int AccommodationId { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
         [Display(Name = "Street Address")]
         public string StreetAddress { get; set; }

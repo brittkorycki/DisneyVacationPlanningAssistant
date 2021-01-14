@@ -10,6 +10,7 @@ namespace VacationPlanningAssistant.Models
     public class TransportEdit
     {
         public int TransportId { get; set; }
+        public string Id { get; set; }
         [Required]
         public string Type { get; set; }
         [Required]

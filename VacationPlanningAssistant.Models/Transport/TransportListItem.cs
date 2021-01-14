@@ -10,6 +10,7 @@ namespace VacationPlanningAssistant.Models
     public class TransportListItem
     {
         public int TransportId { get; set; }
+        public string Id { get; set; }
 
         public string Type { get; set; }
 

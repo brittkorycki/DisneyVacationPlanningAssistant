@@ -10,6 +10,7 @@ namespace VacationPlanningAssistant.Models
     public class DiningDetail
     {
         public int DiningId { get; set; }
+        public string Id { get; set; }
         [Display(Name = "Restaurant Name")]
         public string NameOfRestaurant { get; set; }
         [Display(Name = "Park/Area")]

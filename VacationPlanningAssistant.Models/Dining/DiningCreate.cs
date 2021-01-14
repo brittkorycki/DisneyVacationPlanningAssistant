@@ -11,6 +11,7 @@ namespace VacationPlanningAssistant.Models
     {
         [Required]
         [Display(Name = "Restaurant Name")]
+        public string Id { get; set; }
         public string NameOfRestaurant { get; set; }
         [Display(Name = "Park/Area")]
         public string Location { get; set; }

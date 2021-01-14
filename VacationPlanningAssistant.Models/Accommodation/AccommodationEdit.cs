@@ -10,6 +10,7 @@ namespace VacationPlanningAssistant.Models
     public class AccommodationEdit
     {
         public int AccommodationId { get; set; }
+        public string Id { get; set; }
         [Required]
         public string Name { get; set; }
         public string StreetAddress { get; set; }

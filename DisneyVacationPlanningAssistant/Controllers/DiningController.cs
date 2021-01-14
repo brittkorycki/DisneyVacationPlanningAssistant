@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,7 @@ namespace DisneyVacationPlanningAssistant.Controllers
         // GET: Dining
         public ActionResult Index()
         {
+            var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new DiningService();
             var model = service.GetDinings();
             return View(model);
@@ -27,8 +29,12 @@ namespace DisneyVacationPlanningAssistant.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(DiningCreate model)
         {
-            if (!ModelState.IsValid) return View(model);
 
+            model.Id = (User.Identity.GetUserId());
+            
+            
+            if (!ModelState.IsValid) return View(model);
+                       
             var service = CreateDiningService();
 
             if (service.CreateDining(model))
@@ -44,6 +50,7 @@ namespace DisneyVacationPlanningAssistant.Controllers
 
         public ActionResult Details(int id)
         {
+            var userId = Guid.Parse(User.Identity.GetUserId());
             var svc = CreateDiningService();
             var model = svc.GetDiningById(id);
 

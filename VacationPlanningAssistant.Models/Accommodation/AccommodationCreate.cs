@@ -11,6 +11,7 @@ namespace VacationPlanningAssistant.Models
     {
         [Required]
         public string Name { get; set; }
+        public string Id { get; set; }
         public string StreetAddress { get; set; }
         public string City { get; set; }
         [StringLength(2, MinimumLength = 2, ErrorMessage = "Use official two (2) letter state abbreviation")]
