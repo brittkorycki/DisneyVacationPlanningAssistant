@@ -23,7 +23,7 @@ namespace VacationPlanningAssistant.Services
 
         public bool CreateAccommodation(AccommodationCreate model)
         {
-            Accommodation entity =
+            var entity =
                 new Accommodation()
                 {
                     Name = model.Name,
@@ -52,7 +52,7 @@ namespace VacationPlanningAssistant.Services
                 var query =
                     ctx
                         .Accommodations
-                        .Where(e => e.AccommodationId == e.AccommodationId)
+                        .Where(e => e.AccommodationId == e.AccommodationId && e.Id == _userId.ToString())
                         .Select(
                             e =>
                                 new AccommodationListItem

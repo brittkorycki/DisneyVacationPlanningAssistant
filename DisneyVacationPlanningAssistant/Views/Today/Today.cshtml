@@ -1,0 +1,88 @@
+﻿@using VacationPlanningAssistant.Data
+@{ 
+    IEnumerable<Transport> transport = ViewData["Transports"] as IEnumerable<Transport>;
+    IEnumerable<Accommodation> accommodation = ViewData["Accommodations"] as IEnumerable<Accommodation>;
+    IEnumerable<Dining> dining = ViewData["Dinings"] as IEnumerable<Dining>;
+}
+
+@{
+    ViewBag.Title = "Today"; 
+ }
+
+<h2>Today's Reservations</h2>
+
+<table class="table">
+
+    <tr>
+        <th>
+            Departure
+        </th>
+        <th>
+            Reservation Number
+        </th>
+    </tr>
+    @foreach (Transport item in transport)
+    {
+     
+<tr>
+    
+    <td>
+        @Html.DisplayFor(modelItem => item.Departure)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ReservationNumber)
+    </td>
+</tr>
+
+    }
+</table>
+
+<table class="table">
+    <tr>
+        <th>
+            Check-In
+        </th>
+        <th>
+            Reservation Number
+        </th>
+    </tr>
+    @foreach (Accommodation item in accommodation)
+    {
+
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.CheckIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReservationNumber)
+            </td>
+        </tr>
+
+    }
+</table>
+
+<table class="table">
+    <tr>
+        <th>
+            Reservation Time
+        </th>
+        <th>
+            Reservation Number
+        </th>
+    </tr>
+    @foreach (Dining item in dining)
+    {
+
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ReservationTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReservationNumber)
+            </td>
+        </tr>
+
+    }
+</table>

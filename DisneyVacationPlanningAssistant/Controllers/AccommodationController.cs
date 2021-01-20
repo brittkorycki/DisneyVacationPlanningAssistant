@@ -15,7 +15,7 @@ namespace DisneyVacationPlanningAssistant.Controllers
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new AccommodationService();
+            var service = new AccommodationService(userId);
             var model = service.GetAccommodations();
             return View(model);
         }

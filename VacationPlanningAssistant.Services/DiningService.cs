@@ -49,7 +49,7 @@ namespace VacationPlanningAssistant.Services
                 var query =
                     ctx
                         .Dinings
-                        .Where(e => e.DiningId == e.DiningId)
+                        .Where(e => e.DiningId == e.DiningId && e.Id == _userId.ToString())
                         .Select(
                             e =>
                                 new DiningListItem

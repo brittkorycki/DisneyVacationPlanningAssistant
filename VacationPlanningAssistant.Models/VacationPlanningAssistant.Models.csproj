@@ -63,6 +63,7 @@
     <Compile Include="Dining\DiningEdit.cs" />
     <Compile Include="Dining\DiningListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Today.cs" />
     <Compile Include="Transport\TransportCreate.cs" />
     <Compile Include="Transport\TransportDetail.cs" />
     <Compile Include="Transport\TransportEdit.cs" />

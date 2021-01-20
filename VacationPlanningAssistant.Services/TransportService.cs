@@ -47,13 +47,12 @@ namespace VacationPlanningAssistant.Services
                 var query =
                     ctx
                         .Transports
-                        .Where(e => e.TransportId == e.TransportId)
+                        .Where(e => e.TransportId == e.TransportId && e.Id == _userId.ToString())
                         .Select(
                             e =>
                                 new TransportListItem
                                 {
                                     TransportId = e.TransportId,
-                                    Id= e.Id,
                                     Type = e.Type,
                                     Departure = e.Departure,
                                     ReservationNumber = e.ReservationNumber
@@ -77,7 +76,6 @@ namespace VacationPlanningAssistant.Services
                     new TransportDetail
                     {
                         TransportId = entity.TransportId,
-                        Id = entity.Id,
                         Type = entity.Type,
                         Departure = entity.Departure,
                         ReservationNumber = entity.ReservationNumber

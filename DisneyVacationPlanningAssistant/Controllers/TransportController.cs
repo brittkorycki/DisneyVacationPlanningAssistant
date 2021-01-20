@@ -12,10 +12,10 @@ namespace DisneyVacationPlanningAssistant.Controllers
     public class TransportController : Controller
     {
         // GET: Transport
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new TransportService();
+            var service = new TransportService(userId);
             var model = service.GetTransports();
             return View(model);
         }
