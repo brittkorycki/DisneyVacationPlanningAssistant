@@ -49,6 +49,7 @@ namespace VacationPlanningAssistant.Data
                 .Add(new IdentityUserRoleConfiguration());
         }
 
+        //public System.Data.Entity.DbSet<VacationPlanningAssistant.Models.TransportListItem> TransportListItems { get; set; }
     }
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
     {

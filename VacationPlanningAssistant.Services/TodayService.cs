@@ -54,6 +54,7 @@ namespace VacationPlanningAssistant.Services
                             e =>
                                 new Accommodation
                                 {
+                                    Name = e.Name,
                                     CheckIn = e.CheckIn,
                                     ReservationNumber = e.ReservationNumber
                                 }

@@ -9,15 +9,19 @@ namespace VacationPlanningAssistant.Models
 {
     public class DiningCreate
     {
+
+        public string Id { get; set; }
         [Required]
         [Display(Name = "Restaurant Name")]
-        public string Id { get; set; }
         public string NameOfRestaurant { get; set; }
         [Display(Name = "Park/Area")]
         public string Location { get; set; }
+
         [Required]
+            [Display(Name = "Reservation Time")]
         public DateTime ReservationTime { get; set; }
         [Required]
+        [Display(Name = "Reservation Number")]
         public int ReservationNumber { get; set; }
     }
 }

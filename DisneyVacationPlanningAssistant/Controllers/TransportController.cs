@@ -12,11 +12,12 @@ namespace DisneyVacationPlanningAssistant.Controllers
     public class TransportController : Controller
     {
         // GET: Transport
-        public ActionResult Index(string sortOrder)
+        public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new TransportService(userId);
             var model = service.GetTransports();
+
             return View(model);
         }
 
@@ -43,7 +44,6 @@ namespace DisneyVacationPlanningAssistant.Controllers
             };
 
             ModelState.AddModelError("", "Means of transportation could not be created.");
-
             return View(model);
         }
 
@@ -54,11 +54,6 @@ namespace DisneyVacationPlanningAssistant.Controllers
             var model = svc.GetTransportById(id);
 
             return View(model);
-        }
-
-        private static TransportService CreateTransportService()
-        {
-            return new TransportService();
         }
         public ActionResult Edit(int id)
         {
@@ -119,6 +114,12 @@ namespace DisneyVacationPlanningAssistant.Controllers
             TempData["Save Result"] = "Your transportation was deleted.";
 
             return RedirectToAction("Index");
+        }
+        private TransportService CreateTransportService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new TransportService(userId);
+            return service;
         }
     }
 }

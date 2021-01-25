@@ -17,6 +17,7 @@ namespace DisneyVacationPlanningAssistant.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new DiningService(userId);
             var model = service.GetDinings();
+
             return View(model);
         }
 
@@ -50,17 +51,14 @@ namespace DisneyVacationPlanningAssistant.Controllers
 
         public ActionResult Details(int id)
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
+            
             var svc = CreateDiningService();
             var model = svc.GetDiningById(id);
 
             return View(model);
         }
 
-        private static DiningService CreateDiningService()
-        {
-            return new DiningService();
-        }
+        
         public ActionResult Edit(int id)
         {
             var service = CreateDiningService();
@@ -121,6 +119,12 @@ namespace DisneyVacationPlanningAssistant.Controllers
             TempData["Save Result"] = "Your dining reservation as deleted.";
 
             return RedirectToAction("Index");
+        }
+        private DiningService CreateDiningService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new DiningService(userId);
+            return service;
         }
     }
 }

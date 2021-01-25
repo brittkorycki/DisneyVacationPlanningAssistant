@@ -15,6 +15,7 @@ namespace VacationPlanningAssistant.Models
         public string Type { get; set; }
         [Required]
         public DateTime Departure { get; set; }
+        [Display(Name = "Reservation Number")]
         public int ReservationNumber { get; set; }
     }
 }

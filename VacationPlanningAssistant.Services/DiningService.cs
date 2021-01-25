@@ -27,8 +27,8 @@ namespace VacationPlanningAssistant.Services
             var entity =
                 new Dining()
                 {
-                    NameOfRestaurant = model.NameOfRestaurant,
                     Id = model.Id,
+                    NameOfRestaurant = model.NameOfRestaurant,
                     Location = model.Location,
                     ReservationTime = model.ReservationTime,
                     ReservationNumber = model.ReservationNumber,

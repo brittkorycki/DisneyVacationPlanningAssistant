@@ -15,7 +15,9 @@ namespace VacationPlanningAssistant.Models
         public string NameOfRestaurant { get; set; }
         [Display(Name = "Park/Area")]
         public string Location { get; set; }
+        [Display(Name = "Reservation Time")]
         public DateTime ReservationTime { get; set; }
+        [Display(Name = "Reservation Number")]
         public int ReservationNumber { get; set; }
     }
 }

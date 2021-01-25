@@ -239,7 +239,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Accommodation\Index.cshtml" />
-    <Content Include="Views\Transport\Index.cshtml" />
     <Content Include="Views\Dining\Index.cshtml" />
     <Content Include="Views\Accommodation\Create.cshtml" />
     <Content Include="Views\Dining\Create.cshtml" />
@@ -254,6 +253,7 @@
     <Content Include="Views\Dining\Delete.cshtml" />
     <Content Include="Views\Accommodation\Delete.cshtml" />
     <Content Include="Views\Today\Today.cshtml" />
+    <Content Include="Views\Transport\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

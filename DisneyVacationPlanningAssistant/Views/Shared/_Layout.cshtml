@@ -2,50 +2,91 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>@ViewBag.Title - Disney Vacation Planning Assistant</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css?parameter=1"
+          rel="stylesheet">
+  
+    <link href="../css/simple-sidebar.css" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+   
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Disney Vacation Planning Assistant", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
 
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li>@Html.ActionLink("Transportation", "Index", "Transport")</li>
-                        <li>@Html.ActionLink("Accommodation", "Index", "Accommodation")</li>
-                        <li>@Html.ActionLink("Dining", "Index", "Dining")</li>
-                        <li>@Html.ActionLink("Today", "Index", "Today/Today")</li>
-                    }
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+    <div class="container">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Disney Vacation Planning Assistant", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            @Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            @Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            @Html.Partial("_LoginPartial")
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Brittany Korycki</p>
-        </footer>
-    </div>
+  
+  
+            @RenderBody()
+            <hr />
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-</body>
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Brittany Korycki</p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+
+    </body>
 </html>
+<style>
+    body {
+        background-color: #ccffff;
+        font-family: Georgia, serif;
+    }
+
+    .jumbotron {
+        background-color: #ffccb3;
+        text-align: center;
+        font-family: Garamond, serif;
+    }
+
+    ul {
+        display: inline-block;
+    }
+
+    .body-content {
+        background-color: #ccffff;
+        top: 0;
+        left: 150px;
+        right: 0;
+        bottom: 0;
+    }
+        body {
+      overflow-x: hidden;
+    }
+
+    #page-content-wrapper {
+      width: 100%;
+      position: absolute;
+      padding: 15px;
+    }
+
+    .sidebar {
+        width: auto;
+        top: 100px;
+        left: 150px;
+    
+    }
+
+    
+  
+    
+</style>

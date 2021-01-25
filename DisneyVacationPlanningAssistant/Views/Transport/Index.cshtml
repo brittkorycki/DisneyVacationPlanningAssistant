@@ -1,14 +1,15 @@
 ﻿@model IEnumerable<VacationPlanningAssistant.Models.TransportListItem>
 
+
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
+<h2>Transportation Reservations</h2>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New Transportation", "Create")
 </p>
+
 <table class="table">
     <tr>
         <th>
@@ -26,26 +27,27 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.TransportId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Type)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Departure)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ReservationNumber)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.TransportId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.TransportId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.TransportId })
-    </td>
-</tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransportId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departure)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReservationNumber)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.TransportId }, null) |
+                @Html.ActionLink("Details", "Details", new { id = item.TransportId }, null) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TransportId }, null)
+            </td>
+        </tr>
+    }
 
 </table>
