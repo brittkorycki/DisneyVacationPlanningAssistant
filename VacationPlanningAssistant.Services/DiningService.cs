@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using VacationPlanningAssistant.Data;
 using VacationPlanningAssistant.Models;
+using VacationPlanningAssistant.Contracts;
 
 namespace VacationPlanningAssistant.Services
 {
-    public class DiningService
+    public class DiningService : IDiningService
     {
         private readonly Guid _userId;
       

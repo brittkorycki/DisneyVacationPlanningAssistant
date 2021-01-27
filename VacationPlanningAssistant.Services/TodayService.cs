@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using VacationPlanningAssistant.Data;
 using VacationPlanningAssistant.Models;
+using VacationPlanningAssistant.Contracts;
 
 namespace VacationPlanningAssistant.Services
 {
-    public class TodayService
+    public class TodayService : ITodayService
     {
         private readonly Guid _userId;
         public TodayService(Guid userId)
@@ -84,10 +85,7 @@ namespace VacationPlanningAssistant.Services
                 return query.ToArray();
             }
         }
-       //public Today LoadTodaysReservations()
-       // {
-            
-       // }
+     
 
 
     }

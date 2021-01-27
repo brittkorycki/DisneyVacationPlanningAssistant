@@ -6,11 +6,18 @@ using System.Web;
 using System.Web.Mvc;
 using VacationPlanningAssistant.Models;
 using VacationPlanningAssistant.Services;
+using VacationPlanningAssistant.Contracts;
 
 namespace DisneyVacationPlanningAssistant.Controllers
 {
     public class TodayController : Controller
     {
+        private readonly ITodayService _todayService;
+
+        public TodayController(ITodayService todayService)
+        {
+            _todayService = todayService;
+        }
         // GET: Today
         public ActionResult Today()
         {

@@ -10,125 +10,110 @@
 }
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-pull-2">
-            <ul class="nav nav-pills nav-stacked">
-                <li class="active">
-                    @if (User.Identity.IsAuthenticated)
+
+
+                <h2>Today's Reservations</h2>
+
+                <table class="table">
+
+                    <h4>Transportation</h4>
+                    <tr>
+                        <th>
+                            Departure
+                        </th>
+                        <th>
+                            Reservation Number
+                        </th>
+                    </tr>
+                    @foreach (Transport item in transport)
                     {
-                    <li>@Html.ActionLink("Transportation", "Index", "Transport")</li>
-                    <li>@Html.ActionLink("Accommodation", "Index", "Accommodation")</li>
-                    <li>@Html.ActionLink("Dining", "Index", "Dining")</li>
-                    <li>@Html.ActionLink("Today", "Index", "Today/Today")</li>
-                }
-                </ul>
-            </div>
-        </div>
-    </div>
 
-
-<div class="row">
-            <div class="col-lg-auto">
-                <div class="container body-content" style="margin-top: 50px;">
-                    <h2>Today's Reservations</h2>
-
-                    <table class="table">
-
-                        <h4>Transportation</h4>
                         <tr>
-                            <th>
-                                Departure
-                            </th>
-                            <th>
-                                Reservation Number
-                            </th>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Departure)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ReservationNumber)
+                            </td>
                         </tr>
-                        @foreach (Transport item in transport)
-                        {
 
-                            <tr>
+                    }
+                </table>
 
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Departure)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.ReservationNumber)
-                                </td>
-                            </tr>
+                <table class="table">
+                    <h4>Accommodations</h4>
+                    <tr>
+                        <th>
+                            Name of Hotel
+                        </th>
+                        <th>
+                            Check-In
+                        </th>
+                        <th>
+                            Reservation Number
+                        </th>
+                    </tr>
+                    @foreach (Accommodation item in accommodation)
+                    {
 
-                        }
-                    </table>
-
-                    <table class="table">
-                        <h4>Accommodations</h4>
                         <tr>
-                            <th>
-                                Name of Hotel
-                            </th>
-                            <th>
-                                Check-In
-                            </th>
-                            <th>
-                                Reservation Number
-                            </th>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CheckIn)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ReservationNumber)
+                            </td>
                         </tr>
-                        @foreach (Accommodation item in accommodation)
-                        {
 
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Name)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.CheckIn)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.ReservationNumber)
-                                </td>
-                            </tr>
+                    }
+                </table>
 
-                        }
-                    </table>
+                <table class="table">
+                    <h4>Dining Reservations</h4>
+                    <tr>
+                        <th>
+                            Name of Restaurant
+                        </th>
+                        <th>
+                            Location of Restaurant
+                        </th>
+                        <th>
+                            Reservation Time
+                        </th>
+                        <th>
+                            Reservation Number
+                        </th>
+                    </tr>
+                    @foreach (Dining item in dining)
+                    {
 
-                    <table class="table">
-                        <h4>Dining Reservations</h4>
                         <tr>
-                            <th>
-                                Name of Restaurant
-                            </th>
-                            <th>
-                                Location of Restaurant
-                            </th>
-                            <th>
-                                Reservation Time
-                            </th>
-                            <th>
-                                Reservation Number
-                            </th>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NameOfRestaurant)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Location)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ReservationTime)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ReservationNumber)
+                            </td>
                         </tr>
-                        @foreach (Dining item in dining)
-                        {
 
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.NameOfRestaurant)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Location)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.ReservationTime)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.ReservationNumber)
-                                </td>
-                            </tr>
+                    }
+                </table>
 
-                        }
-                    </table>
-                </div>
-            </div>
-    </div>
+
+    
+
+
+
+
 
 

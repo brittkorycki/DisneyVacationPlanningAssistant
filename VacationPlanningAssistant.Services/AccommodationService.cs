@@ -6,10 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using VacationPlanningAssistant.Data;
 using VacationPlanningAssistant.Models;
+using VacationPlanningAssistant.Contracts;
 
 namespace VacationPlanningAssistant.Services
 {
-    public class AccommodationService
+    public class AccommodationService : IAccommodationService
     {
         private readonly Guid _userId;
         public AccommodationService(Guid userId)

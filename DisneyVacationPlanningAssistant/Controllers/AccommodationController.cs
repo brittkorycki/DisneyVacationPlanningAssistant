@@ -6,11 +6,18 @@ using System.Web;
 using System.Web.Mvc;
 using VacationPlanningAssistant.Models;
 using VacationPlanningAssistant.Services;
+using VacationPlanningAssistant.Contracts;
 
 namespace DisneyVacationPlanningAssistant.Controllers
 {
     public class AccommodationController : Controller
     {
+        private readonly IAccommodationService _accommodationService;
+        public AccommodationController(IAccommodationService accommodationService)
+        {
+            _accommodationService = accommodationService;
+        }
+
         // GET: Accommodation
         public ActionResult Index()
         {

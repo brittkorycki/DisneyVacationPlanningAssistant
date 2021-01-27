@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VacationPlanningAssistant.M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VacationPlanningAssistant.Services", "VacationPlanningAssistant.Services\VacationPlanningAssistant.Services.csproj", "{9E237258-15EA-46F8-8196-CF4818E27F71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VacationPlanningAssistant.Contracts", "VacationPlanningAssistant.Contracts\VacationPlanningAssistant.Contracts.csproj", "{AC588706-D4DE-4F3C-9D8D-BF33F3A91524}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{9E237258-15EA-46F8-8196-CF4818E27F71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E237258-15EA-46F8-8196-CF4818E27F71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E237258-15EA-46F8-8196-CF4818E27F71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC588706-D4DE-4F3C-9D8D-BF33F3A91524}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC588706-D4DE-4F3C-9D8D-BF33F3A91524}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC588706-D4DE-4F3C-9D8D-BF33F3A91524}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC588706-D4DE-4F3C-9D8D-BF33F3A91524}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
