@@ -4,50 +4,121 @@
 @{
     ViewBag.Title = "Index";
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
 
-<h2>Transportation Reservations</h2>
-<p>
-    @Html.ActionLink("Create New Transportation", "Create")
-</p>
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        .row.content {
+            height: 450px
+        }
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TransportId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Departure)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReservationNumber)
-        </th>
-        <th></th>
-    </tr>
+        /* Set gray background color and 100% height */
+        .sidenav {
+            padding-top: 20px;
+            background-color: #f1f1f1;
+            height: 100%;
+        }
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TransportId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Departure)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReservationNumber)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.TransportId }, null) |
-                @Html.ActionLink("Details", "Details", new { id = item.TransportId }, null) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.TransportId }, null)
-            </td>
-        </tr>
-    }
+        /* Set black background color, white text and some padding */
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+        }
 
-</table>
+        /* On small screens, set height to 'auto' for sidenav and grid */
+
+        .sidenav {
+            height: auto;
+            padding: 15px;
+        }
+
+        .row.content {
+            height: auto;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+                <ul class="nav navbar-nav">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Transportation", "Index", "Transport")</li>
+                        <li>@Html.ActionLink("Accommodation", "Index", "Accommodation")</li>
+                        <li>@Html.ActionLink("Dining", "Index", "Dining")</li>
+                        <li>@Html.ActionLink("Today", "Index", "Today/Today")</li>
+                    }
+                </ul>
+            </div>
+            <div class="col-sm-10 text-left">
+
+                <h2>Transportation Reservations</h2>
+                <p>
+                    <a class="btn btn-success" @Html.ActionLink("Create New Transportation", "Create")
+                </p>
+
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TransportId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Type)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Departure)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ReservationNumber)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TransportId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Type)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Departure)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ReservationNumber)
+                            </td>
+                            <td>
+                                <a class="btn btn-default" @Html.ActionLink("Edit", "Edit", new { id = item.TransportId }, null) |
+                                <a class="btn btn-default"  @Html.ActionLink("Details", "Details", new { id = item.TransportId }, null)|
+                                <a class="btn btn-danger"   @Html.ActionLink("Delete", "Delete", new { id = item.TransportId }, null)
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
