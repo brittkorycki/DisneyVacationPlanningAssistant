@@ -7,13 +7,13 @@ namespace VacationPlanningAssistant.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class AddFK : IMigrationMetadata
+    public sealed partial class initCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddFK));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202101130108042_AddFK"; }
+            get { return "202101291730090_initCreate"; }
         }
         
         string IMigrationMetadata.Source

@@ -57,9 +57,9 @@
     <Compile Include="Accommodation.cs" />
     <Compile Include="Dining.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202101130108042_AddFK.cs" />
-    <Compile Include="Migrations\202101130108042_AddFK.Designer.cs">
-      <DependentUpon>202101130108042_AddFK.cs</DependentUpon>
+    <Compile Include="Migrations\202101291730090_initCreate.cs" />
+    <Compile Include="Migrations\202101291730090_initCreate.Designer.cs">
+      <DependentUpon>202101291730090_initCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,8 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101130108042_AddFK.resx">
-      <DependentUpon>202101130108042_AddFK.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101291730090_initCreate.resx">
+      <DependentUpon>202101291730090_initCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

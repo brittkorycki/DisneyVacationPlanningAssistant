@@ -33,11 +33,11 @@ namespace VacationPlanningAssistant.Services
                         .Select(
                             e =>
                                 new Transport
-                                { 
+                                {
                                     Departure = e.Departure,
                                     ReservationNumber = e.ReservationNumber
                                 }
-                        );
+                        ) ;
 
                 return query.ToArray();
             }
@@ -77,6 +77,8 @@ namespace VacationPlanningAssistant.Services
                             e =>
                                 new Dining
                                 {
+                                    NameOfRestaurant = e.NameOfRestaurant,
+                                    Location = e.Location,
                                     ReservationTime = e.ReservationTime,
                                     ReservationNumber = e.ReservationNumber,
                                 }

@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-  
+
     <title>@ViewBag.Title - Disney Vacation Planning Assistant</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -9,29 +9,33 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Disney Vacation Planning Assistant", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+              @Html.ActionLink("Disney Vacation Planning Assistant", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
-
                 @Html.Partial("_LoginPartial")
             </div>
-        </div>
-    </div>
+         </div>
+    </nav>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -48,12 +52,37 @@
 </html>
 
 <style>
+    .container {
+        padding: 80px 120px;
+    }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity: 0.9;
+  }
+  .navbar li a, .navbar .navbar-brand { 
+    color: #d5d5d5 !important;
+  }
+  .navbar-nav li a:hover {
+    color: #fff !important;
+  }
+  .navbar-nav li.active a {
+    color: #fff !important;
+    background-color: #29292c !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+  }
     body {
         background-color: #ccffff;
         font-family: Georgia, serif;
+        overflow-x: hidden;
     }
 
-    .jumbotron {
+    .h1 {
         background-color: #ffccb3;
         text-align: center;
         font-family: Garamond, serif;
@@ -72,11 +101,6 @@
         right: 0;
         bottom: 0;
     }
-
-    body {
-        overflow-x: hidden;
-    }
-
     #page-content-wrapper {
         width: 100%;
         position: absolute;
